@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магнетар — Озёрск | Горно-обогатительное оборудование</title>
+  <meta name="description" content="Магнетар — производство магнитных систем, сепараторов и горно-обогатительного оборудования. Озёрск, Челябинская область. Доставка по России и Казахстану.">
+  <meta name="keywords" content="магнетар, озёрск, горное оборудование, магнитные сепараторы, обогащение руды, переработка шлаков">
+  <meta property="og:title" content="Магнетар — Горно-обогатительное оборудование">
+  <meta property="og:description" content="Производство магнитных систем и сепараторов. Озёрск, Челябинская область.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://magnetar74.ru/">
+  <link rel="canonical" href="https://magnetar74.ru/">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">МАГНЕТАР</a>
+      <nav class="header__nav">
+        <a href="#industries">Отрасли</a>
+        <a href="#about">О компании</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="header__contact">
+        <a href="tel:+73512112770" class="header__phone">8 (351) 211-27-70</a>
+        <a href="https://vk.com/magnetar74" target="_blank" class="header__vk">VK</a>
+        <a href="https://wa.me/79048009669" target="_blank" class="header__wa">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <h1 class="hero__title">Магнетар — Озёрск</h1>
+      <p class="hero__subtitle">Производство магнитных систем и горно-обогатительного оборудования</p>
+      <button class="btn btn--primary" data-open-form>Оставить заявку</button>
+    </div>
+  </section>
+
+  <!-- Отрасли -->
+  <section class="industries" id="industries">
+    <div class="container">
+      <h2 class="section-title">Отрасли применения</h2>
+      <div class="industries__grid">
+        <div class="glass-card">Горная промышленность</div>
+        <div class="glass-card">Переработка металлолома</div>
+        <div class="glass-card">Нерудные материалы</div>
+        <div class="glass-card">Техногенные отвалы</div>
+        <div class="glass-card">Магнитные сепараторы</div>
+        <div class="glass-card">Исследования и инжиниринг</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О компании -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">О компании</h2>
+      <p class="about__text">
+        ООО «Магнетар» — российский производитель оборудования для обогащения полезных ископаемых.
+        Расположено в городе Озёрск, Челябинская область. Специализируется на производстве
+        магнитных сепараторов, дробильно-сортировочных комплексов и систем для переработки
+        техногенных отвалов.
+      </p>
+    </div>
+  </section>
+
+  <!-- Форма заявки -->
+  <section class="form-section" id="contacts">
+    <div class="container">
+      <h2 class="section-title">Оставить заявку</h2>
+      <form class="request-form" id="requestForm">
+        <div class="request-form__group">
+          <input type="text" name="name" class="request-form__input" placeholder="Ваше имя*" required>
+        </div>
+        <div class="request-form__group">
+          <input type="tel" name="phone" class="request-form__input" placeholder="Телефон*" required>
+        </div>
+        <div class="request-form__group">
+          <textarea name="message" class="request-form__textarea" placeholder="Комментарий (необязательно)"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Отправить заявку</button>
+        <div class="request-form__status" id="formStatus"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 «Магнетар». Все права защищены.</p>
+      <p>г. Озёрск, Челябинская область, п. Новогорный, ул. Южноуральская, 10</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
