@@ -3,78 +3,402 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Магнетар — Озёрск | Горно-обогатительное оборудование</title>
-  <meta name="description" content="Магнетар — производство магнитных систем, сепараторов и горно-обогатительного оборудования. Озёрск, Челябинская область. Доставка по России и Казахстану.">
-  <meta name="keywords" content="магнетар, озёрск, горное оборудование, магнитные сепараторы, обогащение руды, переработка шлаков">
-  <meta property="og:title" content="Магнетар — Горно-обогатительное оборудование">
-  <meta property="og:description" content="Производство магнитных систем и сепараторов. Озёрск, Челябинская область.">
+  <title>Магнетар — Озёрск | Производство магнитных систем и горно-обогатительного оборудования</title>
+  <meta name="description" content="Магнетар — российский производитель магнитных сепараторов, дробильно-сортировочных комплексов и оборудования для обогащения полезных ископаемых. Озёрск, Челябинская область. Поставки по России и Казахстану.">
+  <meta name="keywords" content="магнетар, озёрск, магнитные сепараторы, горно-обогатительное оборудование, обогащение руды, переработка шлаков, дробильно-сортировочный комплекс, ДСК, магнитные системы">
+  <meta name="author" content="ООО Магнетар">
+  <meta name="rights" content="ООО Магнетар. Россия. Челябинская область. г. Озёрск.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Магнетар — производство магнитных систем и горно-обогатительного оборудования">
+  <meta property="og:description" content="Исследования, инжиниринг, разработка. Переработка металлолома, скрапа и техногенных отвалов. Магнитные сепараторы и системы.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://magnetar74.ru/">
+  <meta property="og:site_name" content="Магнетар">
+  <!-- КАРТИНКА ДЛЯ OG: заменить на логотип 1200x630 -->
+  <meta property="og:image" content="https://magnetar74.ru/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
   <link rel="canonical" href="https://magnetar74.ru/">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Шапка -->
-  <header class="header">
+  <!-- ============================================
+       ШАПКА
+       ============================================ -->
+  <header class="header" id="header">
     <div class="container header__inner">
-      <a href="/" class="header__logo">МАГНЕТАР</a>
-      <nav class="header__nav">
+      <!-- ЛОГОТИП: заменить на лого Магнетар -->
+      <a href="/" class="header__logo" aria-label="Магнетар — на главную">
+        <span class="header__logo-text">МАГНЕТАР</span>
+      </a>
+
+      <nav class="header__nav" aria-label="Основная навигация">
         <a href="#industries">Отрасли</a>
+        <a href="#products">Продукция</a>
+        <a href="#technologies">Технологии</a>
+        <a href="#services">Услуги</a>
         <a href="#about">О компании</a>
         <a href="#contacts">Контакты</a>
       </nav>
+
       <div class="header__contact">
         <a href="tel:+73512112770" class="header__phone">8 (351) 211-27-70</a>
-        <a href="https://vk.com/magnetar74" target="_blank" class="header__vk">VK</a>
-        <a href="https://wa.me/79048009669" target="_blank" class="header__wa">WhatsApp</a>
+        <a href="https://vk.com/magnetar74" target="_blank" rel="noopener" class="header__social" aria-label="VK">VK</a>
+        <a href="https://wa.me/79048009669" target="_blank" rel="noopener" class="header__social" aria-label="WhatsApp">WA</a>
+        <button class="btn btn--primary btn--sm" data-open-form>Оставить заявку</button>
       </div>
+
+      <!-- Мобильное меню -->
+      <button class="header__burger" aria-label="Меню" id="burger">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- ============================================
+       HERO — ВИДЕО-БЛОК
+       ============================================ -->
   <section class="hero">
+    <!-- ВИДЕО-ФОН: заменить на /media/videos/magnetar_title_video.mp4 -->
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="media/video/magnetar_title_video.mp4" type="video/mp4">
+      <!-- ПОСТЕР-КАРТИНКА (показывается, пока видео грузится): заменить -->
+    </video>
     <div class="hero__overlay"></div>
+
     <div class="container hero__content">
       <h1 class="hero__title">Магнетар — Озёрск</h1>
-      <p class="hero__subtitle">Производство магнитных систем и горно-обогатительного оборудования</p>
-      <button class="btn btn--primary" data-open-form>Оставить заявку</button>
-    </div>
-  </section>
-
-  <!-- Отрасли -->
-  <section class="industries" id="industries">
-    <div class="container">
-      <h2 class="section-title">Отрасли применения</h2>
-      <div class="industries__grid">
-        <div class="glass-card">Горная промышленность</div>
-        <div class="glass-card">Переработка металлолома</div>
-        <div class="glass-card">Нерудные материалы</div>
-        <div class="glass-card">Техногенные отвалы</div>
-        <div class="glass-card">Магнитные сепараторы</div>
-        <div class="glass-card">Исследования и инжиниринг</div>
+      <p class="hero__subtitle">
+        Производство магнитных систем и горно-обогатительного оборудования.
+        Исследования, инжиниринг, разработка.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" data-open-form>Оставить заявку</button>
+        <a href="#industries" class="btn btn--ghost">Наши отрасли</a>
       </div>
     </div>
   </section>
 
-  <!-- О компании -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2 class="section-title">О компании</h2>
-      <p class="about__text">
-        ООО «Магнетар» — российский производитель оборудования для обогащения полезных ископаемых.
-        Расположено в городе Озёрск, Челябинская область. Специализируется на производстве
-        магнитных сепараторов, дробильно-сортировочных комплексов и систем для переработки
-        техногенных отвалов.
-      </p>
+  <!-- ============================================
+       БЕГУЩАЯ СТРОКА НОВОСТЕЙ
+       ============================================ -->
+  <section class="ticker" aria-label="Новости компании">
+    <div class="ticker__label">Новости компании Магнетар</div>
+    <div class="ticker__track">
+      <div class="ticker__content" id="tickerContent">
+        <!-- НОВОСТИ: заменить на актуальные -->
+        <a href="#" class="ticker__item">
+          <span class="ticker__date">30 окт</span>
+          Комплекс обогащения производительностью до 70 тонн в час с сепаратором ПЛБС
+        </a>
+        <a href="#" class="ticker__item">
+          <span class="ticker__date">27 мая</span>
+          Компанией Магнетар установлен комплекс переработки металлургических шлаков С-200
+        </a>
+        <a href="#" class="ticker__item">
+          <span class="ticker__date">27 фев</span>
+          Компанией Магнетар в Магаданскую область отгружен ленточный питатель ПЛ-1000
+        </a>
+        <a href="#" class="ticker__item">
+          <span class="ticker__date">25 фев</span>
+          В районе Екатеринбурга введен в эксплуатацию новый комплекс обеспыливания и рассева
+        </a>
+        <a href="#" class="ticker__item">
+          <span class="ticker__date">23 фев</span>
+          В Иркутск отгружены двух- и однобарабанные магнитные сепараторы для мокрого обогащения
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Форма заявки -->
-  <section class="form-section" id="contacts">
+  <!-- ============================================
+       ОТРАСЛИ ПРИМЕНЕНИЯ — 6 КАРТОЧЕК
+       ============================================ -->
+  <section class="industries section" id="industries">
     <div class="container">
-      <h2 class="section-title">Оставить заявку</h2>
-      <form class="request-form" id="requestForm">
+      <div class="section__header">
+        <span class="section__eyebrow">01 — Отрасли</span>
+        <h2 class="section__title">Отрасли применения</h2>
+        <p class="section__subtitle">Решения для горной, металлургической и перерабатывающей промышленности</p>
+      </div>
+
+      <div class="industries__grid">
+        <!-- КАРТОЧКА 1: КАРТИНКА — /images/industries/mining.jpg -->
+        <a href="#" class="industry-card">
+          <div class="industry-card__image" style="background-image: url('media/images/industries/mining.jpg');"></div>
+          <div class="industry-card__overlay"></div>
+          <div class="industry-card__body">
+            <h3 class="industry-card__title">Горная промышленность</h3>
+            <p class="industry-card__text">Обогащение руд, сепарация, дробильно-сортировочные комплексы</p>
+            <span class="industry-card__link">Подробнее →</span>
+          </div>
+        </a>
+
+        <!-- КАРТОЧКА 2: КАРТИНКА — /images/industries/scrap.jpg -->
+        <a href="#" class="industry-card">
+          <div class="industry-card__image" style="background-image: url('media/images/industries/scrap.jpg');"></div>
+          <div class="industry-card__overlay"></div>
+          <div class="industry-card__body">
+            <h3 class="industry-card__title">Переработка металлолома и скрапа</h3>
+            <p class="industry-card__text">Очистка зашлакованного скрапа, извлечение металла</p>
+            <span class="industry-card__link">Подробнее →</span>
+          </div>
+        </a>
+
+        <!-- КАРТОЧКА 3: КАРТИНКА — /images/industries/nonmetal.jpg -->
+        <a href="#" class="industry-card">
+          <div class="industry-card__image" style="background-image: url('media/images/industries/nonmetal.jpg');"></div>
+          <div class="industry-card__overlay"></div>
+          <div class="industry-card__body">
+            <h3 class="industry-card__title">Производство нерудных материалов</h3>
+            <p class="industry-card__text">Щебень, песок, гравий — обогащение и классификация</p>
+            <span class="industry-card__link">Подробнее →</span>
+          </div>
+        </a>
+
+        <!-- КАРТОЧКА 4: КАРТИНКА — /images/industries/recultivation.jpg -->
+        <a href="#" class="industry-card">
+          <div class="industry-card__image" style="background-image: url('media/images/industries/recultivation.jpg');"></div>
+          <div class="industry-card__overlay"></div>
+          <div class="industry-card__body">
+            <h3 class="industry-card__title">Переработка техногенных отвалов</h3>
+            <p class="industry-card__text">Извлечение полезных компонентов из отходов производства</p>
+            <span class="industry-card__link">Подробнее →</span>
+          </div>
+        </a>
+
+        <!-- КАРТОЧКА 5: КАРТИНКА — /images/industries/magnets.jpg -->
+        <a href="#" class="industry-card">
+          <div class="industry-card__image" style="background-image: url('media/images/industries/magnets.jpg');"></div>
+          <div class="industry-card__overlay"></div>
+          <div class="industry-card__body">
+            <h3 class="industry-card__title">Магнитные сепараторы и системы</h3>
+            <p class="industry-card__text">Производство и инжиниринг магнитных систем</p>
+            <span class="industry-card__link">Подробнее →</span>
+          </div>
+        </a>
+
+        <!-- КАРТОЧКА 6: КАРТИНКА — /images/industries/research.jpg -->
+        <a href="#" class="industry-card">
+          <div class="industry-card__image" style="background-image: url('media/images/industries/research.jpg');"></div>
+          <div class="industry-card__overlay"></div>
+          <div class="industry-card__body">
+            <h3 class="industry-card__title">Исследования и инжиниринг</h3>
+            <p class="industry-card__text">Лабораторные испытания, разработка технологических схем</p>
+            <span class="industry-card__link">Подробнее →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ТЕХНОЛОГИИ — 2 БЛОКА (как у Магнетар)
+       ============================================ -->
+  <section class="technologies section" id="technologies">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">02 — Технологии</span>
+        <h2 class="section__title">Наши технологии</h2>
+      </div>
+
+      <!-- БЛОК 1 -->
+      <div class="tech-block">
+        <!-- КАРТИНКА: /images/tech/scrap-cleaning.jpg -->
+        <div class="tech-block__image" style="background-image: url('media/images/tech/scrap-cleaning.jpg');"></div>
+        <div class="tech-block__body">
+          <h3 class="tech-block__title">Очистка зашлакованного скрапа от засора</h3>
+          <p class="tech-block__text">
+            Решения <strong>МАГНЕТАР</strong> для получения скрапа с нулевым засором.
+            Дробление и галтовка зашлакованного скрапа крупностью до 150 мм.
+          </p>
+          <a href="#" class="btn btn--primary">Узнать больше</a>
+        </div>
+      </div>
+
+      <!-- БЛОК 2 -->
+      <div class="tech-block tech-block--reverse">
+        <!-- КАРТИНКА: /images/tech/iron-concentrate.jpg -->
+        <div class="tech-block__image" style="background-image: url('media/images/tech/iron-concentrate.jpg');"></div>
+        <div class="tech-block__body">
+          <h3 class="tech-block__title">Получение железных концентратов Fe=60+ сухой магнитной сепарацией</h3>
+          <p class="tech-block__text">
+            Технологии <strong>МАГНЕТАР</strong> позволяют обогащать сухой магнитной сепарацией
+            железные руды крупностью до 100 мкм.
+          </p>
+          <a href="#" class="btn btn--primary">Узнать больше</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       УСЛУГИ — СПИСОК
+       ============================================ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">03 — Услуги</span>
+        <h2 class="section__title">Услуги компании</h2>
+      </div>
+
+      <ul class="services__list">
+        <li><a href="#">Монтаж оборудования на площадке заказчика</a></li>
+        <li><a href="#">Проектирование и изготовление электрических шкафов для обогатительного оборудования</a></li>
+        <li><a href="#">Разработка технологических схем обогащения</a></li>
+        <li><a href="#">Исследование свойств и обогатимости минерального сырья</a></li>
+        <li><a href="#">Составление технического задания на оборудование</a></li>
+        <li><a href="#">Футеровка и сборка роторов электромашин</a></li>
+        <li><a href="#">Инжиниринг магнитных систем</a></li>
+        <li><a href="#">Ремонт магнитных сепараторов</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================
+       О КОМПАНИИ
+       ============================================ -->
+  <section class="about section" id="about">
+    <div class="container about__inner">
+      <div class="about__content">
+        <span class="section__eyebrow">04 — О компании</span>
+        <h2 class="section__title">Магнетар — Озёрск</h2>
+        <p class="about__text">
+          ООО «Магнетар» — российский производитель оборудования для обогащения полезных ископаемых.
+          Расположено в городе Озёрск, Челябинская область. Специализируется на производстве
+          магнитных сепараторов, дробильно-сортировочных комплексов и систем для переработки
+          техногенных отвалов.
+        </p>
+        <p class="about__text">
+          Компания ведёт свою историю с 1991 года и за это время выросла в полноценный завод
+          с собственными производственными площадями и современным оборудованием.
+        </p>
+
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__value">30+</span>
+            <span class="stat__label">лет опыта производства</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">25 000</span>
+            <span class="stat__label">м² производственных площадей</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">ISO 9001</span>
+            <span class="stat__label">система качества</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- КАРТИНКА: /images/about/production.jpg -->
+      <div class="about__image" style="background-image: url('media/images/about/production.jpg');"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ФОРМА ЗАЯВКИ — CTA
+       ============================================ -->
+  <section class="cta section" id="contacts">
+    <div class="container">
+      <div class="cta__card">
+        <div class="cta__content">
+          <h2 class="cta__title">Оставить заявку</h2>
+          <p class="cta__text">
+            Заполните форму — и мы свяжемся с вами в ближайшее время.
+            Или напишите нам в VK / WhatsApp.
+          </p>
+
+          <form class="request-form" id="requestForm" novalidate>
+            <div class="request-form__row">
+              <div class="request-form__group">
+                <input type="text" name="name" class="request-form__input" placeholder="Ваше имя*" required autocomplete="name">
+              </div>
+              <div class="request-form__group">
+                <input type="tel" name="phone" class="request-form__input" placeholder="Телефон*" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="request-form__group">
+              <textarea name="message" class="request-form__textarea" placeholder="Комментарий (необязательно)" rows="3"></textarea>
+            </div>
+            <div class="request-form__group request-form__group--checkbox">
+              <label class="checkbox">
+                <input type="checkbox" required>
+                <span>Согласен на обработку персональных данных</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+            <div class="request-form__status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="cta__side">
+          <div class="cta__contact-item">
+            <span class="cta__contact-label">Телефон</span>
+            <a href="tel:+73512112770" class="cta__contact-value">8 (351) 211-27-70</a>
+          </div>
+          <div class="cta__contact-item">
+            <span class="cta__contact-label">Email</span>
+            <a href="mailto:magbest@mail.ru" class="cta__contact-value">magbest@mail.ru</a>
+          </div>
+          <div class="cta__contact-item">
+            <span class="cta__contact-label">Адрес</span>
+            <span class="cta__contact-value">г. Озёрск, Челябинская обл., п. Новогорный, ул. Южноуральская, 10</span>
+          </div>
+          <div class="cta__contact-item">
+            <span class="cta__contact-label">Мессенджеры</span>
+            <div class="cta__socials">
+              <a href="https://vk.com/magnetar74" target="_blank" rel="noopener" class="cta__social">VK</a>
+              <a href="https://wa.me/79048009669" target="_blank" rel="noopener" class="cta__social">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ФУТЕР
+       ============================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="footer__logo">МАГНЕТАР</div>
+        <p class="footer__text">© 2013–2026 «Магнетар». Все права защищены.</p>
+      </div>
+      <div class="footer__col">
+        <span class="footer__title">Контакты</span>
+        <a href="tel:+73512112770">8 (351) 211-27-70</a>
+        <a href="mailto:magbest@mail.ru">magbest@mail.ru</a>
+        <span>г. Озёрск, Челябинская обл., п. Новогорный, ул. Южноуральская, 10 (А/Я 212)</span>
+      </div>
+      <div class="footer__col">
+        <span class="footer__title">Разделы</span>
+        <a href="#industries">Отрасли</a>
+        <a href="#products">Продукция</a>
+        <a href="#technologies">Технологии</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">О компании</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__title">Соцсети</span>
+        <a href="https://vk.com/magnetar74" target="_blank" rel="noopener">VK</a>
+        <a href="https://wa.me/79048009669" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.youtube.com/channel/UCFzqw6deDWcN-N-eT_-cK6Q" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛКА ФОРМЫ (открывается кнопкой) -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close-modal aria-label="Закрыть">×</button>
+      <h3 class="modal__title" id="modalTitle">Оставить заявку</h3>
+      <form class="request-form" id="modalForm" novalidate>
         <div class="request-form__group">
           <input type="text" name="name" class="request-form__input" placeholder="Ваше имя*" required>
         </div>
@@ -82,21 +406,13 @@
           <input type="tel" name="phone" class="request-form__input" placeholder="Телефон*" required>
         </div>
         <div class="request-form__group">
-          <textarea name="message" class="request-form__textarea" placeholder="Комментарий (необязательно)"></textarea>
+          <textarea name="message" class="request-form__textarea" placeholder="Комментарий" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn--primary">Отправить заявку</button>
-        <div class="request-form__status" id="formStatus"></div>
+        <button type="submit" class="btn btn--primary btn--full">Отправить</button>
+        <div class="request-form__status" id="modalStatus" role="status" aria-live="polite"></div>
       </form>
     </div>
-  </section>
-
-  <!-- Футер -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 «Магнетар». Все права защищены.</p>
-      <p>г. Озёрск, Челябинская область, п. Новогорный, ул. Южноуральская, 10</p>
-    </div>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
