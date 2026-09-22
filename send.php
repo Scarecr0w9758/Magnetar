@@ -49,7 +49,14 @@ $phone   = trim($input['phone']   ?? '');
 $email   = trim($input['email']   ?? '');
 $message = trim($input['message'] ?? '');
 
-// Определяем тип контакта
+// Способ связи (phone / email / vk / tg / whatsapp)
+$contactMethod = trim($input['contact_method'] ?? 'phone');
+$allowedMethods = ['phone', 'email', 'vk', 'tg', 'whatsapp'];
+if (!in_array($contactMethod, $allowedMethods, true)) {
+    $contactMethod = 'phone';
+}
+
+// Определяем тип контакта (по какому полю заполнено)
 $contactType = !empty($phone) ? 'phone' : 'email';
 
 // Валидация
@@ -105,16 +112,17 @@ try {
 $requestId = null;
 try {
     $stmt = $pdo->prepare("
-        INSERT INTO requests (name, phone, email, message, contact_type, ip)
-        VALUES (:name, :phone, :email, :message, :contact_type, :ip)
+        INSERT INTO requests (name, phone, email, message, contact_type, contact_method, ip)
+        VALUES (:name, :phone, :email, :message, :contact_type, :contact_method, :ip)
     ");
     $stmt->execute([
-        ':name'         => $name,
-        ':phone'        => $phone ?: null,
-        ':email'        => $email ?: null,
-        ':message'      => $message ?: null,
-        ':contact_type' => $contactType,
-        ':ip'           => $ip,
+        ':name'           => $name,
+        ':phone'          => $phone ?: null,
+        ':email'          => $email ?: null,
+        ':message'        => $message ?: null,
+        ':contact_type'   => $contactType,
+        ':contact_method' => $contactMethod,
+        ':ip'             => $ip,
     ]);
     $requestId = (int)$pdo->lastInsertId();
 } catch (PDOException $e) {
@@ -134,6 +142,17 @@ $text  = "🔔 Новая заявка #{$requestId}\n\n";
 $text .= "👤 Имя: {$name}\n";
 if ($phone)   $text .= "📞 Телефон: {$phone}\n";
 if ($email)   $text .= "✉️ Email: {$email}\n";
+
+// Способ связи для уведомления
+$methodLabels = [
+    'phone'    => 'Телефон',
+    'email'    => 'Email',
+    'vk'       => 'VK',
+    'tg'       => 'Telegram',
+    'whatsapp' => 'WhatsApp',
+];
+$text .= "📬 Способ связи: " . ($methodLabels[$contactMethod] ?? $contactMethod) . "\n";
+
 if ($message) $text .= "💬 Комментарий: {$message}\n";
 $text .= "\n📅 " . date('d.m.Y H:i');
 
@@ -198,8 +217,6 @@ if ($vkSent) {
 // ============================================
 // ОТВЕТ КЛИЕНТУ
 // ============================================
-// Клиенту важно только, что заявка сохранена.
-// Детали VK отдаём для отладки — потом уберём.
 echo json_encode([
     'success'    => true,
     'request_id' => $requestId,
