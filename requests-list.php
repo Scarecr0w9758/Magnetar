@@ -8,30 +8,12 @@ ini_set('display_errors', '0');
 error_reporting(E_ALL);
 
 // ============================================
-// НАСТРОЙКИ ДОСТУПА
-// ============================================
-const AUTH_LOGIN    = 'magnetar';
-const AUTH_PASSWORD = '9758';
-
-// ============================================
 // НАСТРОЙКИ БД
 // ============================================
 const DB_HOST = 'localhost';
 const DB_NAME = 'u0678442_magnetar_requests';
 const DB_USER = 'u0678442_admin';
 const DB_PASS = 'admin975863142';
-
-// ============================================
-// BASIC AUTH
-// ============================================
-$authUser = $_SERVER['PHP_AUTH_USER'] ?? '';
-$authPass = $_SERVER['PHP_AUTH_PW']   ?? '';
-
-if ($authUser !== AUTH_LOGIN || $authPass !== AUTH_PASSWORD) {
-    header('WWW-Authenticate: Basic realm="Magnetar Requests"');
-    header('HTTP/1.0 401 Unauthorized');
-    exit('Требуется авторизация');
-}
 
 // ============================================
 // ПОДКЛЮЧЕНИЕ К БД
@@ -53,7 +35,7 @@ try {
 }
 
 // ============================================
-// ФИЛЬТР ПО СТАТУСУ (опционально, для удобства)
+// ФИЛЬТР ПО СТАТУСУ
 // ============================================
 $statusFilter = $_GET['status'] ?? 'all';
 $allowedStatuses = ['all', 'new', 'processed', 'spam'];
@@ -73,7 +55,13 @@ if (isset($_GET['export']) && $_GET['export'] === 'csv') {
 
     fputcsv($out, ['ID', 'Дата', 'Имя', 'Телефон', 'Email', 'Способ связи', 'Комментарий', 'Статус', 'IP', 'VK']);
 
-    $stmt = $pdo->query("SELECT * FROM requests ORDER BY created_at DESC");
+    if ($statusFilter !== 'all') {
+        $stmt = $pdo->prepare("SELECT * FROM requests WHERE status = ? ORDER BY created_at DESC");
+        $stmt->execute([$statusFilter]);
+    } else {
+        $stmt = $pdo->query("SELECT * FROM requests ORDER BY created_at DESC");
+    }
+
     while ($row = $stmt->fetch()) {
         fputcsv($out, [
             $row['id'],
